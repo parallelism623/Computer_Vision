@@ -6,6 +6,5 @@ Perceptual Losses for Real-Time Style Transfer
 Download
 ---
 * [MSCOCO train2014](http://cocodataset.org/#download) is needed to train the network.
-
 * [Best Artworks of All Time](https://www.kaggle.com/datasets/ikarus777/best-artworks-of-all-time) is example style to train the network
 
