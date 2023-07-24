@@ -31,7 +31,7 @@ def gram(in_put):
 def calc_Style_loss(features, targets):
     style_loss = 0
     for f, t in zip(features, targets):
-        style_loss += mse_criterion(f, t)
+        style_loss += mse_criterion(gram(f), gram(t))
     return style_loss * 1/len(features)
 
 def calc_TV_loss(features):
@@ -53,7 +53,7 @@ def network_train(args):
     loss_network = torchvision.models.__dict__[args.vgg_flag](pretrained=True).features.to(device)
 
     #optimizer
-    optimizer = torch.optim.Adam(transform_network.parameters(), lr=args.lr)
+    optimizer = torch.optim.Adam(params=transform_network.parameters(), lr=args.lr)
 
     #Target style image load
     target_style_image = imload(args.train_style, imsize=args.imsize).to(device)
