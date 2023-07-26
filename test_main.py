@@ -1,7 +1,7 @@
 import os
 from test import network_test
 import argparse
-
+import upscale
 '''
 ARGUMENT: 
 --cuda_device_no
