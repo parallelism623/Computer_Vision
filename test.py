@@ -16,4 +16,5 @@ def network_test(args):
     with torch.no_grad():
         output_image = transform_network(input_image)
     imsave(output_image, args.output)
+    upscale(args.output, args.output)
     return None
